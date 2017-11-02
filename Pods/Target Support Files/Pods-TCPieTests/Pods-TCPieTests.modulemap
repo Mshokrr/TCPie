@@ -1,0 +1,6 @@
+framework module Pods_TCPieTests {
+  umbrella header "Pods-TCPieTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

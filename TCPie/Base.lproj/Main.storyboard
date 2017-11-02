@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="00B-aj-4kh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TCPie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="QRQ-ra-ToK">
+                                <rect key="frame" x="87" y="243.5" width="200" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0J-wn-J5K">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980392156865" green="0.13725490196078433" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="aFg-DU-ArP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Firebase">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsp-lt-zRv"/>
+                                            <segue destination="E5s-B9-5ma" kind="show" id="gpW-Mw-iVc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwZ-JC-354">
+                                        <rect key="frame" x="0.0" y="140" width="200" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6U0-yd-Exc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="TCP">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopTImer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GM7-6W-W4t"/>
+                                            <segue destination="w7I-w7-1wa" kind="show" id="xMa-cQ-H0B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="qbK-VI-7mp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QRQ-ra-ToK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ST3-ya-Kd4"/>
+                            <constraint firstItem="QRQ-ra-ToK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XKk-uE-YmT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="29m-ga-SlP"/>
+                    <connections>
+                        <outlet property="partOneButton" destination="R0J-wn-J5K" id="FZd-Qd-MAK"/>
+                        <outlet property="partTwoButton" destination="MwZ-JC-354" id="Fwd-ch-sRh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="-26"/>
+        </scene>
+        <!--TCP Socket-->
+        <scene sceneID="J9n-Ej-4xj">
+            <objects>
+                <viewController title="TCP Socket" id="w7I-w7-1wa" customClass="TCPSocketViewController" customModule="TCPie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iV3-Q9-hUj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yM-am-CZN">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.2178005642361111" blue="0.11968315972222222" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iBy-n8-OiJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Close Connection">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeConnection:" destination="w7I-w7-1wa" eventType="touchUpInside" id="pub-C3-omX"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uGF-ou-beR">
+                                <rect key="frame" x="70" y="174.5" width="235" height="319.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-gG-jti">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8po-nr-NGg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="1 MB Packet">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="oneMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="lJW-cD-Kzm"/>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CC7-hX-xxj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QH9-U8-lKd">
+                                        <rect key="frame" x="0.0" y="60" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="IZD-Aj-9mr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="2 MB Packet">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoL-ro-1AW"/>
+                                            <action selector="twoMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="7yf-bF-sfq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-J0-SMw">
+                                        <rect key="frame" x="0.0" y="120" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="t2e-Td-PG3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="3 MB Packet">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RgE-FU-M4h"/>
+                                            <action selector="threeMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="Jnr-VS-iWH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysP-Bm-UNT">
+                                        <rect key="frame" x="0.0" y="180" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YPF-5o-TP2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="4 MB Packet">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fourMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="qsf-iz-ARJ"/>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qk-Xw-g48"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhT-OD-pS5">
+                                        <rect key="frame" x="0.0" y="240" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3EV-t6-gHz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="5 MB Packet">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fiveMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="MMX-4t-sfY"/>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWy-HF-KQN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb2-O7-SRD">
+                                        <rect key="frame" x="0.0" y="300" width="235" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmn-pw-aDL">
+                                <rect key="frame" x="20" y="84" width="200" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="b85-Ot-O3E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1yM-am-CZN" firstAttribute="leading" secondItem="hMY-WP-eeL" secondAttribute="leading" constant="20" id="Bbf-ao-50B"/>
+                            <constraint firstItem="vmn-pw-aDL" firstAttribute="leading" secondItem="hMY-WP-eeL" secondAttribute="leading" constant="20" id="Egr-iR-pXR"/>
+                            <constraint firstItem="hMY-WP-eeL" firstAttribute="bottom" secondItem="1yM-am-CZN" secondAttribute="bottom" constant="20" id="Ge5-PT-bhM"/>
+                            <constraint firstItem="uGF-ou-beR" firstAttribute="leading" secondItem="hMY-WP-eeL" secondAttribute="leading" constant="70" id="I1a-3W-Xm1"/>
+                            <constraint firstItem="hMY-WP-eeL" firstAttribute="trailing" secondItem="uGF-ou-beR" secondAttribute="trailing" constant="70" id="SBQ-HY-Ct1"/>
+                            <constraint firstItem="uGF-ou-beR" firstAttribute="centerY" secondItem="iV3-Q9-hUj" secondAttribute="centerY" id="T2p-GK-Cbm"/>
+                            <constraint firstItem="vmn-pw-aDL" firstAttribute="top" secondItem="hMY-WP-eeL" secondAttribute="top" constant="20" id="rQw-YQ-eFN"/>
+                            <constraint firstItem="hMY-WP-eeL" firstAttribute="trailing" secondItem="1yM-am-CZN" secondAttribute="trailing" constant="20" id="uVI-u1-g7R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hMY-WP-eeL"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectionButton" destination="1yM-am-CZN" id="qBX-Kp-4iZ"/>
+                        <outlet property="connectionLabel" destination="vmn-pw-aDL" id="TXC-Mz-bz0"/>
+                        <outlet property="statusLabel" destination="Wb2-O7-SRD" id="Y9u-Vj-Gl4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0H-hp-DKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686" y="329"/>
+        </scene>
+        <!--Firebase Packet Transmission-->
+        <scene sceneID="Klu-fk-sKG">
+            <objects>
+                <viewController title="Firebase Packet Transmission" id="E5s-B9-5ma" customClass="FireBaseTestViewController" customModule="TCPie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7N-4t-mLM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0b-NE-70J">
+                                <rect key="frame" x="70" y="264" width="235" height="139.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRg-QS-5kI">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="kIa-ag-N7d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Periodic Sending">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="oneMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="OX6-fi-5Zi"/>
+                                            <action selector="periodicSend:" destination="E5s-B9-5ma" eventType="touchUpInside" id="fbz-qt-gH5"/>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UZK-r7-lQm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-rZ-F0f">
+                                        <rect key="frame" x="0.0" y="60" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.13725490200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uyA-cM-qiH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Burst Sending">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="burstSend:" destination="E5s-B9-5ma" eventType="touchUpInside" id="fVe-AJ-1Vb"/>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DDt-n7-T8j"/>
+                                            <action selector="twoMBSending:" destination="w7I-w7-1wa" eventType="touchUpInside" id="3me-XT-m7E"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeF-Ls-52v">
+                                        <rect key="frame" x="0.0" y="120" width="235" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e0b-NE-70J" firstAttribute="leading" secondItem="BMg-o2-cPr" secondAttribute="leading" constant="70" id="AjU-dq-cXL"/>
+                            <constraint firstItem="e0b-NE-70J" firstAttribute="centerY" secondItem="d7N-4t-mLM" secondAttribute="centerY" id="MP3-cM-NnZ"/>
+                            <constraint firstItem="BMg-o2-cPr" firstAttribute="trailing" secondItem="e0b-NE-70J" secondAttribute="trailing" constant="70" id="vuq-Pf-Po4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BMg-o2-cPr"/>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="VeF-Ls-52v" id="dJ0-Qr-0y7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKw-e5-Igt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686" y="-342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bOh-8e-6EX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="00B-aj-4kh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bvl-Gc-DUd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qNf-Ld-kd0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ai-ZC-LRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686.39999999999998" y="-25.187406296851577"/>
+        </scene>
+    </scenes>
+</document>
